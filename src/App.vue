@@ -29,7 +29,6 @@
 
 <script setup lang="ts">
 import * as T from 'three'
-import { FontAsset } from './models'
 import { useStore } from './store/project'
 import PreviewWindow from './components/preview_window/PreviewWindow.vue'
 import RendererWindow from './components/renderer_window/RendererWindow.vue'
