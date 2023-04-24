@@ -1,7 +1,7 @@
 # i-love-video
 一个简单好用且免费的视频剪辑网站❤
 
-上线地址：8good.top
+上线地址：http://8good.top
 
 项目源码：https://github.com/axing521/i-love-video
 
