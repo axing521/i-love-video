@@ -22,13 +22,13 @@ export type IVideoStrip = IStrip & {
 }
 
 export class VideoStrip extends Strip {
-  position: T.Vector3 = new T.Vector3(0, 0, 0)
-  type: string = 'Video'
+  override position: T.Vector3 = new T.Vector3(0, 0, 0)
+  override type: string = 'Video'
 
   loaded: boolean = false
 
   videoOffset: number = 0
-  percent: number = 100
+  override percent: number = 100
 
   video!: HTMLVideoElement
   canvas?: HTMLCanvasElement
@@ -88,7 +88,7 @@ export class VideoStrip extends Strip {
     this.updateAsset(videoAsset)
   }
 
-  public toInterface(): IVideoStrip {
+  public override toInterface(): IVideoStrip {
     return {
       id: this.id,
       length: this.length,
@@ -147,7 +147,7 @@ export class VideoStrip extends Strip {
     )
   }
 
-  public async update(time: number, delta: number, isPlay: boolean, playMode: PlayMode, fps: number) {
+  public override async update(time: number, delta: number, isPlay: boolean, playMode: PlayMode, fps: number) {
     const lwoFps = delta < 1000 / fps - FPS_ERROR_TOLERANCE
     // 更新strip的同时更新tex，使得threejs的渲染发生更新
     if (this.tex) this.tex.needsUpdate = true

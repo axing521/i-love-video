@@ -18,13 +18,8 @@
   <div class="timeline-panel">
     <TimelinePanel />
   </div>
-  <RendererWindow
-    ref="rendererWindow"
-    v-model:dialogVisible="rendererDialog"
-    :project="store.project"
-    :scene="store.scene"
-    :camera="camera"
-  />
+  <RendererWindow ref="rendererWindow" v-model:dialogVisible="rendererDialog" :project="store.project"
+    :scene="store.scene" :camera="camera" />
 </template>
 
 <script setup lang="ts">
@@ -86,15 +81,17 @@ const update = (time: number = 0) => {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .app-bar {
   display: flex;
   height: 5vh;
   background-color: rgb(28 29 32);
 }
+
 .main {
   height: 60vh;
 }
+
 .asset-window {
   background-color: rgb(49 50 58);
   border-radius: 10px;
@@ -108,11 +105,13 @@ const update = (time: number = 0) => {
   -ms-user-select: none;
   user-select: none;
 }
+
 .preview-window {
   height: 60vh;
   overflow: hidden;
   margin-left: 10px;
 }
+
 .strip-inspect {
   background-color: rgb(49 50 58);
   border-radius: 10px;
@@ -123,6 +122,7 @@ const update = (time: number = 0) => {
   height: 60vh;
   overflow-x: hidden;
 }
+
 .timeline-panel {
   /* height: 50vh; */
   overflow-y: hidden;

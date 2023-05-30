@@ -5,7 +5,9 @@
       <el-button type="success" size="small" :icon="Download" @click="store.downloadProject">工程下载</el-button>
       <el-button type="success" size="small" @click="RefOpenProject?.click()">
         导入
-        <el-icon class="el-icon--right"><Upload /></el-icon>
+        <el-icon class="el-icon--right">
+          <Upload />
+        </el-icon>
       </el-button>
     </el-button-group>
   </div>
@@ -41,10 +43,12 @@ const emit = defineEmits<{
   margin-left: 20px;
   font-size: 22px;
 }
+
 .appbar-project {
   margin-left: 10vw;
   margin-top: 10px;
 }
+
 .appbar-control {
   position: absolute;
   right: 30px;

@@ -3,7 +3,7 @@ import { Asset } from './Asset'
 
 export class FontAsset extends Asset {
   public static defaultFont: FontAsset
-  type: string = 'Font'
+  override type: string = 'Font'
 
   public static init() {
     return new Promise<void>((resolve, reject) => {

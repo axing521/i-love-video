@@ -6,14 +6,56 @@
   <link rel="icon" href="/video.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="/assets/js/ccapture/CCapture.all.min.js"></script>
+  <style>
+    .beian {
+      min-width: 1100px;
+      color: #aaa;
+      padding: 50px 0;
+      text-align: center;
+      font-size: 1rem;
+      box-shadow: 0 0 30px rgb(0 0 0 / 7%);
+    }
+
+    .banquan {
+      margin: 0;
+      padding: 2px;
+    }
+
+    .beianhao {
+      color: #606266;
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+      position: relative;
+      text-decoration: none;
+      outline: 0;
+      cursor: pointer;
+      padding: 0;
+      font-size: 14px;
+      font-weight: 500;
+
+      :hover {
+        color: #409eff;
+        border-bottom: 1px solid;
+      }
+    }
+  </style>
   <title>I-Love-Video</title>
 </head>
 
-<body style="margin: 0; overflow: hidden; color: white;">
+<body style="margin: 0; color: white;">
   <div id="app" style="background-color: rgb(36 36 40);"></div>
-  <p style="background:none;height: 5%;position: fixed;bottom: 0px;width: 100%;text-align: center;">
+  <div class='beian'>
+    <p class='banquan'>ACBash 2022-2023</p>
+    <a href="https://beian.miit.gov.cn/" class="beianhao">
+      <span>京ICP备2021034087号-2</span>
+    </a>
+  </div>
+  <!-- <p style="background:none;height: 5%;position: fixed;bottom: 0px;width: 100%;text-align: center;">
     <a class="banquan" style="color:#939393;" href="https://beian.miit.gov.cn/" target="_blank">京ICP备2021034087号-2</a>
-  </p>
+  </p> -->
   <script type="module" src="./src/main.ts"></script>
 </body>
 

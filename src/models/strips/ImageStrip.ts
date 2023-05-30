@@ -18,9 +18,9 @@ export type IImageStrip = IStrip & {
 }
 
 export class ImageStrip extends Strip {
-  position: T.Vector3 = new T.Vector3(0, 0, 0)
-  type: string = 'Image'
-  percent: number = 100
+  override position: T.Vector3 = new T.Vector3(0, 0, 0)
+  override type: string = 'Image'
+  override percent: number = 100
 
   obj!: T.Mesh
   tex?: T.Texture
@@ -72,7 +72,7 @@ export class ImageStrip extends Strip {
     // this.obj.scale.set((this.tex?.image.width * this.percent) / 100, (this.tex?.image.height * this.percent) / 100, 1)
   }
 
-  public toInterface(): IImageStrip {
+  public override toInterface(): IImageStrip {
     return {
       id: this.id,
       length: this.length,
@@ -121,7 +121,7 @@ export class ImageStrip extends Strip {
 
   // update核心是对obj（mesh）的更新
   // 而该mesh在之前已经被添加到scene中，实现了绑定（同步更新）？
-  public async update(time: number, _delta: number, _isPlay: boolean, _playMode: PlayMode, _fps: number) {
+  public override async update(time: number, _delta: number, _isPlay: boolean, _playMode: PlayMode, _fps: number) {
     this.obj.position.set(this.position.x, this.position.y, this.position.z)
     this.obj.position.setZ(this.layer)
     this.obj.scale.set((this.width * this.percent) / 100, (this.height * this.percent) / 100, 1)

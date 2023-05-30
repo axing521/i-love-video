@@ -19,7 +19,7 @@ export type IAudioStrip = IStrip & {
 
 export class AudioStrip extends Strip {
   readonly audio!: HTMLAudioElement
-  readonly type: string = 'Audio'
+  override readonly type: string = 'Audio'
   asset: AudioAsset | null = null
 
   // playRequests: number[] = []
@@ -63,7 +63,7 @@ export class AudioStrip extends Strip {
     this.audio.load()
   }
 
-  public toInterface(): IAudioStrip {
+  public override toInterface(): IAudioStrip {
     return {
       id: this.id,
       length: this.length,
@@ -88,7 +88,7 @@ export class AudioStrip extends Strip {
     })
   }
 
-  public async update(time: number, delta: number, isPlay: boolean, playMode: PlayMode, fps: number) {
+  public override async update(time: number, delta: number, isPlay: boolean, playMode: PlayMode, fps: number) {
     if (!this.loaded) return
     const lwoFps = delta < 1000 / fps - FPS_ERROR_TOLERANCE
     if (this.start < time && time < this.end) {

@@ -41,14 +41,14 @@ export class TextStrip extends Strip implements ITextStrip {
    * The string of "Strip" kind.
    * Do not overwrite basically.
    */
-  type: string = 'Text'
+  override type: string = 'Text'
 
   /**
    * The text to show.
    */
   text: string = ''
 
-  percent: number = 100
+  override percent: number = 100
   /**
    * Font size. 1px is 1px of the rendering screen.
    */
@@ -92,7 +92,7 @@ export class TextStrip extends Strip implements ITextStrip {
   /**
    * The position of text.
    */
-  position: T.Vector3 = new T.Vector3(0, 0, 0)
+  override position: T.Vector3 = new T.Vector3(0, 0, 0)
 
   /**
    * The object to render in three.js.
@@ -224,7 +224,7 @@ export class TextStrip extends Strip implements ITextStrip {
    * convert to ITextStrip.
    * @returns The interface.
    */
-  public toInterface(): ITextStrip {
+  public override toInterface(): ITextStrip {
     return {
       id: this.id,
       color: this.color,
@@ -257,7 +257,7 @@ export class TextStrip extends Strip implements ITextStrip {
    * @param _fps Not used.
    * @returns void
    */
-  public async update(time: number, _delta: number, _isPlay: boolean, _playMode: PlayMode, _fps: number) {
+  public override async update(time: number, _delta: number, _isPlay: boolean, _playMode: PlayMode, _fps: number) {
     // this.ctx.font = `${this.fontFamily} ${this.fontSize}px '${this.fontFamily}'`
     // const metrics = this.ctx.measureText(this.text)
     // this.canvas.width = metrics.width
