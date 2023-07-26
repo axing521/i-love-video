@@ -1,0 +1,7 @@
+{
+    "prettier.bracketSameLine": true,
+    "prettier.configPath": ".prettierrc",
+    "prettier.printWidth": 100,
+    "prettier.tabWidth": 4,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true
+}

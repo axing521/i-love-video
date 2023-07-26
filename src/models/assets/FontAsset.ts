@@ -9,7 +9,7 @@ export class FontAsset extends Asset {
     return new Promise<void>((resolve, reject) => {
       try {
         const loader = new THREE.FontLoader()
-        const defaultFontPath = '/static/assets/font/gentilis_bold.typeface.json'
+        const defaultFontPath = '../../../public/assets/font/gentilis_bold.typeface.json'
         loader.load(
           defaultFontPath,
           () => {

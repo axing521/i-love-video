@@ -195,7 +195,7 @@ export class TextStrip extends Strip implements ITextStrip {
    */
   draw() {
     // const font =
-    this.ctx.font = `${this.fontFamily} ${this.fontSize}px '${this.fontFamily}'`
+    this.ctx.font = `${this.fontStyle} ${this.fontSize}px '${this.fontFamily}'`
     const metrics = this.ctx.measureText(this.text)
     this.canvas.width = metrics.width
     this.canvas.height = metrics.fontBoundingBoxAscent
